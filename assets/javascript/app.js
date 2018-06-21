@@ -1,18 +1,23 @@
 $(".hiddenQuestionContainer").hide();
 
-var counter = 0;
+var counter;
 
 var answerArray = ["c", "b", "d", "a"];
 
-var playerAnswers = [];
+var playerAnswers;
 
-var quizCycle = setInterval(appendDiv, 3000);
+//var quizCycle = setInterval(appendDiv, 3000);
+var quizCycle;
+
+var gradeCounter;
 
 function grading() { 
 
-	for (i = 0; i < answerArray.length; i++) {
+    gradeCounter = playerAnswers.length;
+    console.log("playerAnswers length: " + playerAnswers.length);
+    console.log("gradeCounter: " + gradeCounter);
 
-	var gradeCounter = 4;
+	for (i = 0; i < answerArray.length; i++) {
 
 	if (playerAnswers[i] !== answerArray[i]) {
 
@@ -22,19 +27,47 @@ function grading() {
      
 };
 
-console.log("You answered " + ((gradeCounter / 4) * 100) + "% of the questions correctly.")
+console.log("Grade counter: " + gradeCounter);
+console.log("playerAnswers length: " + playerAnswers.length);
+console.log("You answered " + ((gradeCounter / playerAnswers.length) * 100) + "% of the questions correctly.");
+$("#announcements").show();
+$("#announcements").html("The quiz is over.");
+$("#results").show();
+$("#results").html("You answered " + gradeCounter + "/" + answerArray.length + " questions correctly.<br>" +
+    "Your score is " + ((gradeCounter / answerArray.length) * 100) + "%.");
 
 };
 
-grading();
+$('#loadGame').click(function() { 
+    //Result html elements
+    $("#announcements").html("");
+    $("#results").html("");
+    //Reset variables
+    counter = 0;
+    playerAnswers = [];
+    //Hide html elements
+    $("#loadGame").hide();
+    $("#announcements").hide();
+    $("#results").hide();
+
+    //Set the interval 
+    quizCycle = setInterval(appendDiv, 3000); 
+    //Append tutorial div
+    $(".questionDiv:first").appendTo(".activeQuestionContainer");
+    $(".questionDiv:first").addClass("activeQuestionDiv");
+    $(".activeQuestionDiv").removeClass("questionDiv");
+});
 
 function appendDiv() {
 
     counter++;
-
+    //console.log(counter);
+    //Remove the active question div from view
     $(".activeQuestionDiv").appendTo(".hiddenQuestionContainer");
+    //Now the the user cannot change their input, save the value
     playerAnswers.push($('input[name=answer]:checked').val());
     //console.log(typeof($('input[name=answer]:checked').val()));
+    //Reset radio buttons
     $("input[type='radio']").prop('checked', false);
     //alert(playerAnswers);
     //alert($(".hiddenQuestionContainer:first-child").attr("class"));
@@ -44,25 +77,31 @@ function appendDiv() {
     $(".questionDiv:first").appendTo(".activeQuestionContainer");
     $(".questionDiv:first").addClass("activeQuestionDiv");
     $(".activeQuestionDiv").removeClass("questionDiv");
+    $(".activeQuestionContainer h3").html("Question " + counter + "/" + answerArray.length);
 
-    if (counter === 5) {
+
+    if (counter === answerArray.length + 1) {
         clearInterval(quizCycle);
         playerAnswers.shift();
-        $("#announcements").html("The quiz is over. You answered " + playerAnswers);
-        // console.log("Player answers: " + playerAnswers);
-        // console.log("Answer array " + answerArray);
-        // alert(playerAnswers === answerArray);
+        //$("#announcements").html("The quiz is over. You answered " + playerAnswers);
+        console.log("Player answers: " + playerAnswers);
+        console.log("Answer array " + answerArray);
+        console.log(playerAnswers === answerArray);
         grading();
+        //Reset classes
+        $(".activeQuestionDiv").addClass("questionDiv");
+        $(".questionDiv").removeClass("activeQuestionDiv");
+        //Reverse elements in hiddenQuestionContainer, bringing them back into proper order
+        //Credit: anurag on Stack Overflow: https://stackoverflow.com/a/5347903
+        var list = $('.hiddenQuestionContainer');
+        var listItems = list.children();
+        list.append(listItems.get().reverse());
+        $("#loadGame").show();
 
     }
 
     /* $('div.questionDiv input').on('change', function() {
-
         console.log($("input[type='radio']:checked").val());
-
     }); */
 
 };
-
-
-
