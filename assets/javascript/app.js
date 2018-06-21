@@ -11,6 +11,8 @@ var quizCycle;
 
 var gradeCounter;
 
+var interval = 15000;
+
 function grading() { 
 
     gradeCounter = playerAnswers.length;
@@ -51,11 +53,13 @@ $('#loadGame').click(function() {
     $("#results").hide();
 
     //Set the interval 
-    quizCycle = setInterval(appendDiv, 3000); 
+    quizCycle = setInterval(appendDiv, interval); 
     //Append tutorial div
     $(".questionDiv:first").appendTo(".activeQuestionContainer");
     $(".questionDiv:first").addClass("activeQuestionDiv");
     $(".activeQuestionDiv").removeClass("questionDiv");
+    $(".activeQuestionContainer h3").html("The quiz will begin shortly. You will have " + (interval / 1000) + " seconds per question.");
+
 });
 
 function appendDiv() {
