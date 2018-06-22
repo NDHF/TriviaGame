@@ -1,25 +1,58 @@
-.questionDiv {
+.activeQuestionContainer {
     margin: 0 auto;
-    width: 50%;
+    width: 1000px;
 }
 
 h3 {
     text-align: center;
+    color: white;
+}
+
+h2#credits {
+    color: white;
+    text-align: center;
+}
+
+h4 {
+    color: white;
+}
+
+p.text {
+    color: white;
 }
 
 hgroup {
+    color: white;
     text-align: center;
 }
 
 #loadGame {
     display: block;
     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+body {
+    background-image: url(../images/tempest.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 div.progressContainer {
     width: 100%;
     height: 15px;
     background-color: black;
+    margin-top: 20px;
+}
+
+.nextQuestion {
+    margin-top: 20px;
+}
+
+.activeQuestionDiv span {
+    background-color: transparent;
 }
 
 div.progress {
@@ -31,7 +64,6 @@ div.progress {
     animation-name: example;
     animation-duration: 15s;
     animation-timing-function: linear;
-
 }
 
 /* Safari 4.0 - 8.0 */
@@ -44,4 +76,18 @@ div.progress {
 @keyframes example {
     0%   {width: 1%;}
     100% {width: 100%;}
+}
+
+.wrong {
+    color: white;
+    background-color: red;
+}
+
+.correct {
+    color: white;
+    background-color: green;
+}
+
+h1.wrongCorrect {
+    display: inline;
 }

@@ -10,13 +10,12 @@
 
 <body>
     <hgroup>
-    <h1 id="announcements">
-        Welcome to the Quiz!
-        <br>
-        Click to begin!
-    </h1>
+        <h1 id="announcements">
+            Welcome to the English Trivia Quiz!
+            <br> Click to begin!
+        </h1>
 
-    <h2 id="results"></h2>  
+        <h2 id="results"></h2>
     </hgroup>
 
     <input type="button" id="loadGame" name="loadGame" value="GO!" title="GO!">
@@ -24,97 +23,258 @@
     <div class="activeQuestionContainer">
 
     </div>
+    <hgroup>
+        <h1 class="wrongCorrect wrong">Wrong Answers</h1>
+        <h1 class="wrongCorrect correct">Correct Answers</h1>
+    </hgroup>
 
     <div class="hiddenQuestionContainer">
 
-            <div id="tutorialDiv" class="questionDiv">
-                    <h3>The quiz will begin shortly. You will have 15 seconds per question.</h3>
-                    <h4>The red bar shows how much time is left for each question.</h4>
-                    <br>
-                    <input type="radio" name="answer" value="a" disabled> Answer 1
-                    <br>
-                    <input type="radio" name="answer" value="b" disabled> Answer 2
-                    <br>
-                    <input type="radio" name="answer" value="c" disabled> Answer 3
-                    <br>
-                    <input type="radio" name="answer" value="d" disabled> Answer 4
-                    <div class="progressContainer">
-                    <div class="progress"></div>
-                    </div>
-                </div>
-
-        <div class="questionDiv">
-            <h3>Question</h3>
-            <h4>What is the capital of Delaware?</h4>
+        <div id="tutorialDiv" class="questionDiv">
+            <h3>The quiz will begin shortly. You will have 15 seconds per question.</h3>
+            <h4>The <span>red bar</span> shows how much time is left for each question.</h4>
+            <p class="text">&nbsp;&darr; <strong>Answer each question by clicking one of these buttons.</strong></p>
             <br>
-            <input type="radio" name="answer" value="a"> New Haven
+            <input type="radio" name="answer" value="a"> <span>Try Me!</span>
             <br>
-            <input type="radio" name="answer" value="b"> Burlington
+            <input type="radio" name="answer" value="b"> <span>Try Me!</span>
             <br>
-            <input type="radio" name="answer" value="c"> Dover
+            <input type="radio" name="answer" value="c"> <span>Try Me!</span>
             <br>
-            <input type="radio" name="answer" value="d"> Providence
+            <input type="radio" name="answer" value="d"> <span>Try Me!</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question"> <p class="text">&larr;
+            <strong>If you don't want to wait around, you can skip to the next question.</strong></p>
             <div class="progressContainer">
-            <div class="progress"></div>
+                <div class="progress"></div>
             </div>
         </div>
 
         <div class="questionDiv">
             <h3>Question</h3>
-            <h4>In what Vermont city was Ben & Jerry's founded?</h4>
+            <h4>What is the longest English word without proper vowels?</h4>
             <br>
-            <input type="radio" name="answer" value="a"> New Haven
+            <input type="radio" name="answer" value="a">
+            <span class="a">rhythms</span>
             <br>
-            <input type="radio" name="answer" value="b"> Burlington
+            <input type="radio" name="answer" value="b">
+            <span class="b">sphynx</span>
             <br>
-            <input type="radio" name="answer" value="c"> Dover
+            <input type="radio" name="answer" value="c">
+            <span class="c">trysts</span>
             <br>
-            <input type="radio" name="answer" value="d"> Providence
+            <input type="radio" name="answer" value="d">
+            <span class="d">spryly</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
             <div class="progressContainer">
-                    <div class="progress"></div>
-                    </div>
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>What is the term for a word found only once in a given text?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">A
+                <i>magnum opus</i>
+            </span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">A
+                <i>hapax legomenon</i>
+            </span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">A
+                <i>gluteus maximus</i>
+            </span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">An
+                <i>alma mater</i>
+            </span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
 
         </div>
 
         <div class="questionDiv">
             <h3>Question</h3>
-            <h4>The state motto for Colorado is <i>Nil Sin Numine</i>. What is one possible translation of <i>Numine</i>?</h4>
+            <h4>Which of the following is the longest word in the collected works of Shakespeare?</h4>
             <br>
-            <input type="radio" name="answer" value="a"> New Haven
+            <input type="radio" name="answer" value="a">
+            <span class="a">honorificabilitudinitatibus</span>
             <br>
-            <input type="radio" name="answer" value="b"> Burlington
+            <input type="radio" name="answer" value="b">
+            <span class="b">antidisestablishmentarianism</span>
             <br>
-            <input type="radio" name="answer" value="c"> Dover
+            <input type="radio" name="answer" value="c">
+            <span class="c">pnemonoultramicroscopicsilicovolcanoconiosis</span>
             <br>
-            <input type="radio" name="answer" value="d"> Providence
+            <input type="radio" name="answer" value="d">
+            <span class="d">Chronohotonthologos</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
             <div class="progressContainer">
-                    <div class="progress"></div>
-                    </div>
+                <div class="progress"></div>
+            </div>
 
         </div>
 
         <div class="questionDiv">
             <h3>Question</h3>
-            <h4>What is a city in Connecticut?</h4>
+            <h4>Which of the following words is
+                <em>not</em> an autoantonym?</h4>
             <br>
-            <input type="radio" name="answer" value="a"> New Haven
+            <input type="radio" name="answer" value="a">
+            <span class="a">cleave</span>
             <br>
-            <input type="radio" name="answer" value="b"> Burlington
+            <input type="radio" name="answer" value="b">
+            <span class="b">off</span>
             <br>
-            <input type="radio" name="answer" value="c"> Dover
+            <input type="radio" name="answer" value="c">
+            <span class="c">bound</span>
             <br>
-            <input type="radio" name="answer" value="d"> Providence
-
+            <input type="radio" name="answer" value="d">
+            <span class="d">set</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
             <div class="progressContainer">
-                    <div class="progress"></div>
-                    </div>
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>Which of the following phrases did
+                <em>not</em> come from the King James Bible?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">"Eat, drink, and be merry"</span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">"A drop in the bucket"</span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">"Wild goose chase"</span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">"At my wit's end"</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>Which of the following words did
+                <em>not</em> first appear in Shakespeare's works?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">addiction</span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">sensation</span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">eyeball</span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">puking</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>This is often called the shortest coherent short story:
+                <strong>
+                    <em>"For sale: baby shoes, never worn."</em>
+                </strong> Who wrote it?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">Jorge Luis Borges</span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">Getrude Stein</span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">Ernest Hemingway</span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">Harlan Ellison</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>When Hendrix says "'Scuse me while I
+                <em>kiss the sky</em>", but it sounds like
+                <em>kiss this guy</em>, what is this called?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">The Mandela Effect</span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">a Hackett</span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">a mondegreen</span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">a demiurge</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="questionDiv">
+            <h3>Question</h3>
+            <h4>Which of the following words does not describe itself?</h4>
+            <br>
+            <input type="radio" name="answer" value="a">
+            <span class="a">Pentasyllabic</span>
+            <br>
+            <input type="radio" name="answer" value="b">
+            <span class="b">Normal</span>
+            <br>
+            <input type="radio" name="answer" value="c">
+            <span class="c">Cutesy</span>
+            <br>
+            <input type="radio" name="answer" value="d">
+            <span class="d">Monosyllabic</span>
+            <br>
+            <input type="button" class="nextQuestion" name="Next Question" value="Next Question" title="Next Question">
+            <div class="progressContainer">
+                <div class="progress"></div>
+            </div>
         </div>
 
     </div>
 
+    <div id="creditsDiv">
+        <h2 id="credits">Background Image: <em>Miranda - The Tempest</em> by John William Waterhouse, 1916</h2>
+    </div>
+
     <div id="scriptDiv">
-            <script src="assets/javascript/app.js"></script>
-        </div>
+        <script src="assets/javascript/app.js"></script>
+    </div>
 
 </body>
 
